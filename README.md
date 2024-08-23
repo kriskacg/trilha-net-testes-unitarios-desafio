@@ -1,81 +1,40 @@
-# DIO - Trilha .NET - Testes Unitários com C#
-www.dio.me
+# DIO - Trilha .NET - Testes Unitários com C# 💻🚀
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de Testes Unitários com C#, da trilha .NET da DIO.
+Este repositório contém a solução para o desafio de projeto da trilha .NET da DIO sobre Testes Unitários com C#.
 
-## Contexto
-Você está trabalhando em um sistema, e seus gestores relataram que frequentemente há problemas no software: bugs, funcionalidades que estavam funcionando de repente não funcionam mais, problemas de validações, entre outros. Os clientes já começam a duvidar da qualidade do código.
+## 🔍Objetivo: 
+Implementar testes unitários para garantir a qualidade do código de um sistema que possui duas classes: ValidacoesLista e ValidacoesString.
 
-Feito isso, você sugeriu a implementação de testes unitários: escrever testes cobrindo as partes mais críticas do sistema, com cenários positivos e negativos, a fim de ter uma rastreabilidade e controle do código, melhorando assim a qualidade desse sistema.
+ ## 📑Contexto: 
+O sistema atual sofre de problemas recorrentes como bugs e funcionalidades quebradas, afetando a qualidade e a confiança dos clientes. A implementação de testes unitários visa solucionar esses problemas, garantindo a rastreabilidade e controle do código.
 
-Os gestores aceitaram a sua ideia, e com isso, você precisa implementar testes unitários no sistema.
+ ## 📔Estrutura do projeto:
 
-## Premissas
-O sistema hoje possui dois projetos: um do tipo console, e um do tipo testes com **xUnit**. O projeto do tipo console possui duas classes em que são realizadas as lógicas principais: **ValidacoesLista** e **ValidacoesString**. Essas classes contém métodos em comum que são usados para realizar diversas validações em determinados cenários.
+### ConsoleApp: 
+Projeto do tipo console com as classes ValidacoesLista e ValidacoesString.
 
-O projeto de testes possui as classes de teste **ValidacoesListaTests** e **ValidacoesStringTests**, assim como seus métodos para validar o projeto do tipo console, porém estão incompletos. 
+### Tests: 
+Projeto de testes com xUnit contendo as classes ValidacoesListaTests e ValidacoesStringTests.
 
-O seu objetivo é implementar os métodos de testes contidos no projeto.
+## 🛠️Implementação:
+A solução consiste em completar os métodos de teste dentro do projeto Tests. Os métodos de teste foram implementados de acordo com os seguintes critérios:
 
-## Projeto Console, suas classes e métodos
+### Cobertura de Cenários: 
+Cada método de teste abrange cenários positivos e negativos para validar as funcionalidades das classes ValidacoesLista e ValidacoesString.
 
-Essas são as classes do projeto console, onde fica a principal lógica do sistema.
+### Asserções: 
+As asserções foram utilizadas para verificar se o resultado esperado de cada método de teste é atingido.
 
-**Classe ValidaçõesLista**
+### Documentação: 
+Os métodos de teste foram documentados com comentários explicativos sobre o objetivo e a validação realizada.
 
-Classe responsável por realizar diversas validações envolvendo listas.
+ ## ✨Resultados:
+Após a implementação dos testes unitários, foi possível garantir a qualidade do código, identificar erros com mais rapidez e aumentar a confiança na funcionalidade do sistema.
 
-| Classe          | Método                       | Objetivo                                                                                                                |
-|---------------- |------------------------------|-------------------------------------------------------------------------------------------------------------------------|
-| ValidacoesLista | RemoverNumerosNegativos      | Recebe uma lista de números inteiros e retorna uma nova lista, apenas com os números positivos                          |
-| ValidacoesLista | ListaContemDeterminadoNumero | Recebe uma lista de números inteiros e verifica se um determinado número está presente dentro dessa lista               |
-| ValidacoesLista | MultiplicarNumerosLista      | Recebe uma lista de números inteiros e retorna uma nova lista, com seus valores múltiplicados por um determinado número |
-| ValidacoesLista | RetornarMaiorNumeroLista     | Recebe uma lista de números inteiros e retorna o maior número entre eles                                                |
-| ValidacoesLista | RetornarMenorNumeroLista     | Recebe uma lista de números inteiros e retorna o menor número entre eles                                                |
+### Observações:
+O código fonte foi baseado nas premissas do desafio de projeto.
+Este projeto pode servir como base para a implementação de testes unitários em projetos .NET.
+A cobertura de código pode ser analisada para identificar áreas que necessitam de testes adicionais.
 
-**Classe ValidacoesString**
-
-Classe responsável por realizar diversas validações envolvendo strings.
-
-| Classe           | Método                       | Objetivo                                                                                                                
-|------------------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ValidacoesString | RetornarQuantidadeCaracteres | Recebe um texto qualquer e retorna a quantidade de caracteres presentes no texto                                                                           |
-| ValidacoesString | ContemCaractere              | Recebe um texto qualquer e um texto a ser procurado, retorna verdadeiro ou falso se um determinado trecho procurado está presente no texto                 |
-| ValidacoesString | TextoTerminaCom              | Recebe um texto qualquer e um trecho a ser procurado, retorna verdadeiro ou falso se um determinado trecho procurado está presente no final do texto apenas |
-
-## Projeto do tipo teste, suas classes e métodos
-
-**Classe ValidacoesListaTests**
-
-Classe responsável por realizar os testes da classe ValidacoesLista.
-
-| Classe               | Método de teste                               | Resultado esperado do teste
-|----------------------|-----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| ValidacoesListaTests | DeveRemoverNumerosNegativosDeUmaLista         | Ao passar uma lista com diversos números, incluindo positivos e negativos, deve ser retornado uma nova lista apenas com números positivos  |
-| ValidacoesListaTests | DeveConterONumero9NaLista                     | Ao passar uma lista com diversos números, incluindo o número 9, deve retornar verdadeiro, pois encontrou o 9 na lista                      |
-| ValidacoesListaTests | NaoDeveConterONumero10NaLista                 | Ao passar uma lista com diversos números, mas sem o número 10, deve retornar falso, pois não encontrou o 10 na lista                       |
-| ValidacoesListaTests | DeveMultiplicarOsElementosDaListaPor2         | Ao passar uma lista de inteiros, deve retornar uma nova lista, com todos os elementos da lista multiplicados por 2                         |
-| ValidacoesListaTests | DeveRetornar9ComoMaiorNumeroDaLista           | Ao passar uma lista de números inteiros, sendo o maior deles 9, deve retornar o 9 como maior elemento dentro dessa lista                   |
-| ValidacoesListaTests | DeveRetornarOitoNegativoComoMenorNumeroDaList | Ao passar uma lista de números inteiros, sendo o menor deles -8, deve retornar o -8 como menor elemento dentro dessa lista                 |
-
-**Classe ValidacoesStringTests**
-
-Classe responsável por realizar os testes da classe ValidacoesString.
-
-| Classe                | Método de teste                                  | Resultado esperado do teste
-|---------------------- |--------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ValidacoesStringTests | DeveRetornar6QuantidadeCaracteresDaPalavraMatrix | Ao passar um texto escrito a palavra "Matrix", deve retornar o número 6, representando 6 caracteres presentes na palavra                                                                         |
-| ValidacoesStringTests | DeveContemAPalavraQualquerNoTexto                | Ao passar um texto escrito "Esse é um texto qualquer" e procurar pela palavra "qualquer", deve retornar verdadeiro pois a palavra existe no texto                                                |
-| ValidacoesStringTests | NaoDeveConterAPalavraTesteNoTexto                | Ao passar um texto escrito "Esse é um texto qualquer" e procurar pela palavra "teste", deve retornar falso pois a palavra não existe no texto                                                    |
-| ValidacoesStringTests | TextoDeveTerminarComAPalavraProcurado            | Ao passar um texto escrito "Começo, meio e fim do texto procurado" e procurar pela palavra "procurado", deve retornar verdadeiro pois a palavra existe no texto e está inclusa no final do texto |
-
-## Estrutura do projeto
-
-O projeto está estruturado da seguinte maneira:
-
-![Métodos Swagger](Imagens/projeto.png)
-
-
-## Solução
-O código de testes está pela metade, e você deverá dar continuidade implementando os testes descritos acima, para que no final, tenhamos um programa de testes funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+ ## 🫶Agradecimentos:
+Agradeço à DIO pela oportunidade de aprender sobre testes unitários com C# através da trilha .NET.
